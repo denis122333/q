@@ -88,7 +88,7 @@ const message = 'one, two, three, four';
 
 console.log('split - ',message.split());
 
-console.log('split & join - sss',message.split(',').join('.'))
+console.log('split & join - ',message.split(',').join('.'))
 
 // Object.assign test
 
