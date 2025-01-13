@@ -10,9 +10,7 @@ const arr0 = [
     {name: 'Vasya', age: 51,},
 ];
 
-arr0.forEach((element, index, array) => {
-    console.log('forEach - ', element)
-}); 
+arr0.forEach((element, index, array) => console.log('forEach - ', element)); 
 
 // indexOf or lastIndexOf
 // for arrays of numbers or strings , not for arrays of objects.  
@@ -295,3 +293,60 @@ logUser({
     something2: 'blabla2',
     something3: 'blabla3',
 });
+
+// parseInt , parseFloat, toFixed, toPrecision, Math... ...
+
+const numberAsString = '213.5px';
+
+console.log('parseFloat - ', parseFloat(numberAsString));
+
+// find 
+
+const arr20 = [{name: 'Afanasi', age: 40,}, {name: 'Inokenti', age: 40,}, {name: 'Lal', age: 100,},];
+
+console.log('find');
+
+console.log(arr20.find((element) => element.name === 'Lal'));
+
+console.log(arr20.find((element) => {
+    if (element.name === 'Lal') {
+        return true;
+    }
+}));
+
+// map
+
+// recude
+
+// sort
+
+
+
+// for in
+
+const user5 = {
+    name: 'Tolik',
+    age: 60,
+    city: 'Lviv',
+    beer: true,
+}
+
+for (const key in user5) {
+    console.log(key, user5[key]);
+}
+
+// obj keys, values, ... etc
+
+console.log(Object.keys(user5));
+
+console.log(Object.values(user5));
+
+Object.keys(user5).forEach((key) => console.log(key));
+
+Object.values(user5).forEach((value) => console.log(value));
+
+// obj entries , each key+value of object will be array , [name: 'sda'], [age: 213] .......
+
+console.log(Object.entries(user5));
+
+Object.entries(user5).forEach((element) => console.log(element[0], element[1]))
