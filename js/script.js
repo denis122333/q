@@ -197,7 +197,7 @@ const calculator = {
 // calculator.mul()
 
 
-// slice (copy array but we can copy not only full, we can copy a part of array)
+// slice (copy array but we can copy not only full, we can copy a part of array), splice - delete
 
 const arr13 = [1, 2, 3];
 const arr14 = arr13.slice();
@@ -343,10 +343,45 @@ console.log(Object.values(user5));
 
 Object.keys(user5).forEach((key) => console.log(key));
 
+// for (let key of Object.keys(user5)) {
+//     console.log(key);
+// }
+
 Object.values(user5).forEach((value) => console.log(value));
 
-// obj entries , each key+value of object will be array , [name: 'sda'], [age: 213] .......
+
+// obj entries , each key+value of object will be array , [name: 'sda'], [age: 213] ....... (fromEntries...)
 
 console.log(Object.entries(user5));
 
-Object.entries(user5).forEach((element) => console.log(element[0], element[1]))
+Object.entries(user5).forEach((element) => console.log(`key - ${element[0].toUpperCase()}, value - ${element[1]}`));
+
+// json , JSON.stringify(user) , JSON.parse(user)
+
+// setTimeout, clearTimeout, setInterval, clearInterval,
+
+const logMessage = (name, age) => alert(`hello , my name is ${name}, im ${age}!!!`);
+
+setTimeout(logMessage, 3000, 'Afanasi', 55);
+
+// promise
+
+const promise = new Promise((fulfill, reject) => {
+    console.log('Start, (pending)...');
+
+    setTimeout(() => {
+        if (Math.random() > 0.5) {
+            fulfill('Good! fulfill!');
+        } else {
+            reject('Bad..., reject...');
+        }
+    }, 3000);
+})
+
+promise.then((successData) => {
+    console.log('Succsess!', successData)
+}).catch((errorData) => {
+    console.log('Error :(', errorData)
+}).finally(() => {
+    console.log('25671276')
+})
