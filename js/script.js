@@ -84,9 +84,9 @@ console.log('join - ', arr6.join('-'));
 
 const message = 'one, two, three, four';
 
-console.log('split - ',message.split());
+console.log('split - ', message.split());
 
-console.log('split & join - ',message.split(',').join('.'))
+console.log('split & join - ', message.split(',').join('.'))
 
 // Object.assign test
 
@@ -359,11 +359,11 @@ Object.entries(user5).forEach((element) => console.log(`key - ${element[0].toUpp
 // json , JSON.stringify(user) , JSON.parse(user)
 
 // setTimeout, clearTimeout, setInterval, clearInterval,
-
+/*
 const logMessage = (name, age) => alert(`hello , my name is ${name}, im ${age}!!!`);
 
 setTimeout(logMessage, 3000, 'Afanasi', 55);
-
+*/
 // promise
 
 const promise = new Promise((fulfill, reject) => {
@@ -385,3 +385,179 @@ promise.then((successData) => {
 }).finally(() => {
     console.log('25671276')
 })
+
+//
+
+// --__--
+
+const checkNumber = (n) => [n > 0, n % 2 === 0, n % 10 === 0];
+
+checkNumber(3);
+checkNumber(10);
+
+// --__--
+
+const createArray = (N) => {
+    let arr = [];
+
+    for (let i = 0; i <= N; i++) {
+        arr.push(i);
+    }
+
+    return arr;
+};
+
+// --__--
+
+const getArraysSum = (arr1, arr2) => {
+    let sum = 0;
+
+    if (arr1.length !== arr2.length) return 'arrs length not equal';
+
+    for (let i = 0; i < arr1.length; i++) {
+        sum = sum + arr1[i] + arr2[i];
+    }
+
+    return sum;
+};
+
+// --__--
+
+const combineArrays = (first, second) => {
+    let arr = [];
+
+    for (let i = 0; i < first.length; i++) arr.push((first[i] + second[i]));
+
+    return arr;
+};
+
+console.log(combineArrays([1, 2, 5], [3, 6, 1]));
+
+// --__--
+
+const doublePower = (currentPowers) => {
+    let newPowers = [];
+
+    for (let i of currentPowers) newPowers.push(i * 2);
+
+    return newPowers;
+};
+
+// --__--
+
+const makeStickers = (detailsCount, robotPart) => {
+    let arr = [];
+
+    for (let i = 1; i <= detailsCount; i++) {
+        arr.push(`${robotPart} detail #${i}`);
+    }
+
+    return arr;
+};
+
+// --__--
+
+const decryptMessage = (message) => {
+    let egassem = '';
+
+    // for (let i = message.length - 1; i >= 0; i--) {
+    //     egassem += message[i];
+    // }
+ 
+    // for (let i = 0; i < message.length; i++) {
+    //     egassem = message[i] + egassem;
+    // }
+
+    for (let letter of message) egassem = letter + egassem;
+
+    return egassem;
+};
+
+console.log(decryptMessage('hello'));
+
+// --__--
+
+const getDrinks = (numberOfGuest) => {
+    let sum = 0;
+
+    for (let i = 1; i <= numberOfGuest; i++) {
+        sum += i;
+    }
+
+    return sum;
+};
+
+console.log(getDrinks(6));
+
+// --__--
+
+const getDrinksWithStep = (numberOfGuest, step) => {
+    let sum = 0;
+
+    for (let i = 1; i <= numberOfGuest; i += step) {
+        sum += i;
+    }
+
+    return sum;
+};
+
+// --__--
+
+const isSorted = (boxNumbers) => {
+    for (let i = 0; i < boxNumbers.length; i++) {
+        if (boxNumbers[i] < boxNumbers[i - 1]) return false;
+    }
+
+    return true;
+};
+
+console.log(isSorted([ 1, 2, 3, 4, 5]));
+
+// --__--
+
+const removeVowels = (doc) => {
+    let docNew = '';
+
+    for (let i = 0; i < doc.length; i++) {
+        if (!'aeiouy'.includes(doc[i].toLowerCase())) docNew += doc[i];
+    }
+
+    return docNew;
+};
+
+console.log(removeVowels('dOcumEEntooO'));
+
+// --__--
+
+const compareRobots = (firstRobotResults, secondRobotResults) => {
+    let firstCheck = 0;
+    let secondCheck = 0;
+
+    for (let i of firstRobotResults) firstCheck += i;
+    for (let i of secondRobotResults) secondCheck += i;
+
+    if (firstCheck > secondCheck) return 'First robot for sale!';
+    if (secondCheck > firstCheck) return 'Second robot for sale!';
+
+    return 'Both robots for sale!';
+};
+
+console.log(compareRobots([12, 4, 13], [1, 1, 4, 5, 12]));
+console.log(compareRobots([9, 7, 9], [1, 3, 4, 5, 12]));
+console.log(compareRobots([1, 3, 4], [1, 1, 4, 5]));
+
+// --__--
+
+const getLocation = (coordinates, commands) => {
+    
+    for (let command of commands) {
+        if (command === 'forward') coordinates[1]++;
+        if (command === 'back') coordinates[1]--;
+        if (command === 'right') coordinates[0]++;
+        if (command === 'left') coordinates[0]--;
+    }
+
+    return coordinates;
+};
+
+console.log(getLocation([2, 3], ['back', 'back', 'back', 'right']));
