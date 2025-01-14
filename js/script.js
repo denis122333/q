@@ -561,3 +561,43 @@ const getLocation = (coordinates, commands) => {
 };
 
 console.log(getLocation([2, 3], ['back', 'back', 'back', 'right']));
+
+// --__--
+
+const isSubstring = (phrase, part) => phrase.includes(part);
+
+// --__--
+
+const getPosition = (text, word) => text.indexOf(word);
+
+// --__--
+
+const countLetters = (input) => {
+    let count = 0;
+
+    for (let i of input) {
+        if (i.toUpperCase() !== i.toLowerCase()) count++;
+    }
+
+    return count;
+};
+
+// --__--
+
+const checkWord = (words, word) => words.includes(word);
+
+// --__--
+
+const getLargestNumber = (numbers) => {
+    let max = numbers[0];
+
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] > max) max = numbers[i];
+    }
+
+    return max;
+}
+
+// --__--
+
+const joinWords = (words, glue) => words.join(glue);
