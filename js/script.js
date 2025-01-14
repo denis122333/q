@@ -504,14 +504,14 @@ const getDrinksWithStep = (numberOfGuest, step) => {
 // --__--
 
 const isSorted = (boxNumbers) => {
-    for (let i = 0; i < boxNumbers.length; i++) {
+    for (let i = 1; i < boxNumbers.length; i++) {
         if (boxNumbers[i] < boxNumbers[i - 1]) return false;
     }
 
     return true;
 };
 
-console.log(isSorted([ 1, 2, 3, 4, 5]));
+console.log(isSorted([1, 2, 3, 4, 5]));
 
 // --__--
 
