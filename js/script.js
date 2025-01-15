@@ -601,3 +601,44 @@ const getLargestNumber = (numbers) => {
 // --__--
 
 const joinWords = (words, glue) => words.join(glue);
+
+// --__--
+
+function checkBrackets (str) {
+    let count1 = 0;
+    let count2 = 0;
+    
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === '(') count1++;
+        if (str[i] === ')') count2++;
+    }
+
+    if(count1 === count2) return true;
+
+    return false;
+}
+
+console.log(checkBrackets('()()()()'));
+
+//
+
+function UserInfo(name) {
+    this.name = name;
+}
+
+console.log(new UserInfo('Afanasi'));
+
+//
+
+const logMessage = (actionBefore, actionAfter) => {
+    actionBefore();
+
+    console.log('hello');
+
+    actionAfter();
+};
+
+const fn1 = () => console.log('before');
+const fn2 = () => console.log('after');
+
+logMessage(fn1, fn2);
