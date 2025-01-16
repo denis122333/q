@@ -642,3 +642,203 @@ const fn1 = () => console.log('before');
 const fn2 = () => console.log('after');
 
 logMessage(fn1, fn2);
+
+//
+
+// --__--
+
+let arr21 = [1, 2, 3, 4, 5];
+
+arr21.forEach((element) => console.log(element));
+
+let arr22 = [10, 20, 30, 40];
+
+let sum = 0;
+
+arr22.forEach((element) => sum += element);
+
+console.log(sum);
+
+// --__--
+
+let arr23 = [1, 2, 3, 4, 5];
+
+const arr23New = arr23.map((element) => element * 2);
+
+let arr24 = ['apple', 'banana', 'cherry'];
+
+const arr24New = arr24.map((element) => element.length);
+
+// --__--
+
+const arr25 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+const arr25New = arr25.filter((element) => element % 2 === 0);
+
+console.log(arr25New);
+
+const arr26 = ['cat', 'dog', 'elephant', 'cow'];
+
+const arr26New = arr26.filter((element) => element.length > 3);
+
+console.log(arr26New);
+
+// --__--
+
+const arr27 = [2, 5, 7, 8, 10, 3];
+
+let sum1 = 0;
+
+arr27.forEach((element) => {
+    if (element % 2 === 0) sum1++;
+});
+
+// --__--
+
+const arr28 = ['apple', 'banana', 'cherry'];
+
+arr28.forEach((element, index) => console.log(element, index));
+
+// --__--
+
+const arr29 = [2, 4, 6, 8];
+
+const arr29New = arr29.map((element) => Math.pow(element, 2));
+
+// --__--
+
+const arr30 = ['John', 'Jane', 'Alex'];
+
+const arr30New = arr30.map((element) => 'Mr. ' + element);
+
+const addMr = (array) => {
+    const arrayNew = [];
+
+    for (let name of array) {
+        arrayNew.push(`Mr. ${name}`);
+    }
+
+    return arrayNew;
+};
+
+console.log(arr30New);
+console.log(addMr(arr30));
+
+// --__--
+
+const arr31 = [30, 60, 20, 80, 40, 100];
+
+const arr31New = arr31.filter((element) => element > 50);
+
+// --__--
+
+const user6 = {
+    name: 'Afanasi',
+    age: 40,
+    city: 'Kyiv',
+};
+
+const user6Entries = Object.entries(user6);
+
+// const user6EntriesFormatted = user6Entries.map((userEntry) => `${userEntry[0].toUpperCase()}, ==${userEntry[1]}==`);
+
+// console.log(user6EntriesFormatted);
+
+const user6EntriesFormatted = user6Entries.map(([key, value]) => {
+    return [key.toUpperCase(), `==${value}==`]
+});
+
+console.log(user6EntriesFormatted);
+
+const userFormatted = Object.fromEntries(user6EntriesFormatted);
+
+console.log(userFormatted);
+
+// --__--
+
+const data = new Map([
+    [1, '(number)'],
+    ['1', '(string)']
+]);
+
+data.set(2, '(nubmer)');
+data.set('2', '(string)');
+
+console.log(data.get(2));
+console.log(data.get('2'));
+
+console.log(data.has(1));
+
+// data.delete(1);
+// data.clear();
+
+console.log(data.size);
+
+// data.keys() ,.values() ,.entries() , ... for of ... ,
+
+// --__--
+
+const arr32 = [3, 7, 5, 8, 11];
+
+console.log(arr32.find((element) => element % 2 === 0));
+
+const findNumFind = (array) => {
+    
+    for (let i of array) {
+        if (i % 2 === 0) return i;
+    }
+
+};
+
+console.log(findNumFind(arr32));
+
+// --__--
+
+const arr33 = [2, 4, 6, 8, 10];
+
+const countArr33 = arr33.reduce((sum, element) => {
+    return sum += element;
+}, 0);
+
+console.log(countArr33);
+
+// --__--
+
+const arr34 = [30, 10, 50, 20, 40];
+
+const arr35 = Object.assign([], arr34);
+
+// arr35[0] = 100;
+
+console.log(arr34);
+console.log(arr35);
+
+const arr36 = Object.assign([], arr34).sort((a, b) => a - b);
+
+console.log(arr36);
+
+// --__--
+
+const arr37 = [1, 2, 3];
+const arr38 = [4, 5, 6];
+
+const arr37AndArr38 = arr37.concat(arr38);
+
+console.log(arr37AndArr38);
+
+// --__--
+
+const arr39 = [1, 2, 2, 3, 4, 4, 5];
+
+const removeDublicates = (array) => {
+    let arrSorted = Object.assign([], array).sort((a, b) => a - b);
+    let arrNew = [];
+
+    for (let i = 0; i < arrSorted.length; i++) {
+        if (arrSorted[i] !== arrSorted[i - 1]) arrNew.push(arrSorted[i]);
+    }
+
+    return arrNew;
+};
+
+console.log(removeDublicates(arr39));
