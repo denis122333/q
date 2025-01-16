@@ -842,3 +842,71 @@ const removeDublicates = (array) => {
 };
 
 console.log(removeDublicates(arr39));
+
+// --__--
+
+const arr40 = ['lalala', 'la', 'lalalala'];
+
+const arr40New = arr40.map((element) => element.length);
+
+console.log(arr40New);
+
+// --__--
+
+const users = [
+    { name: 'Alice', age: 25 },
+    { name: 'Bob', age: 17 },
+    { name: 'Charlie', age: 30 },
+];
+
+const usersWhichOlderThan18 = (allUsers) => {
+    const arr = [];
+
+    allUsers.forEach((element) => {
+        if (element.age >= 18) arr.push(element.name);
+    });
+
+    return arr;
+};
+
+console.log(usersWhichOlderThan18(users));
+
+// or 
+
+const users2 = [
+    { name: 'Alice', age: 25 },
+    { name: 'Bob', age: 17 },
+    { name: 'Charlie', age: 30 },
+];
+
+// function users2WhichOlderThan18(allUsers) {
+//     return allUsers.filter(function(element) {
+//         return element.age >= 18;
+//     }).map(function(element) {
+//         return element.name;
+//     });
+// }
+
+const users2WhichOlderThan18 = (allUsers) => allUsers.filter((element) => element.age >= 18).map((element) => element.name);
+
+console.log(users2WhichOlderThan18(users2));
+
+// or
+
+const users3 = [
+    { name: 'Alice', age: 25 },
+    { name: 'Bob', age: 17 },
+    { name: 'Charlie', age: 30 },
+];
+
+const users3WhichOlderThan18 = (allUsers) => {
+    let arr = [];
+
+    for (let i of allUsers) {
+        if (i.age >= 18) arr.push(i.name);
+    }
+
+    return arr;
+}
+
+console.log(users3WhichOlderThan18(users3));
